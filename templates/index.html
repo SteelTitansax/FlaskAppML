@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Health disease ML App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+
+  <style>
+  body {
+    background-color: lightblue;
+  }
+
+  .h3, h3 {
+    font-size: 1.75rem;
+    padding-left: 750px;
+  }
+ .btn {
+    --bs-btn-padding-x: 7.6rem;
+}
+  </style>
+  <body>
+
+  <!-- Navigation bar -->
+
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-text">
+        <h3 class="pt-2"><strong>Health Diagnostic App    </strong><img class="pl-5" src="../static/icon-hospital.png" width="40" height="40">
+</h3>
+      </span>
+    </div>
+  </nav>
+
+
+  <!-- Form inputs  -->
+  <div class="container">
+  <div class="row">
+
+    <div class="col-8 card bg-body-tertiary mt-5">
+        <p class="pt-3"><u> Please introduce your health data : </u> </p>
+
+      <form class="row pt-2 pb-5 pr-5 pl-5 g-3" action="/input_health" method="POST">
+        <div class="col-md-6">
+          <label for="age" class="form-label">Age</label>
+            <input type="text" class="form-control" name="age" placeholder="age" id="age">
+        </div>
+        <div class="col-md-6">
+          <label for="sex" class="form-label">Sex</label>
+          <input type="text" class="form-control" name="sex" placeholder="sex" id="sex">
+        </div>
+          <div class="col-md-6">
+          <label for="chestPain" class="form-label">Chest Pain</label>
+          <input type="text" class="form-control" name="chestPain" placeholder="chestPain" id="chestPain">
+        </div>
+        <div class="col-md-6">
+          <label for="trestbps" class="form-label">Blood Pressure</label>
+          <input type="text" class="form-control" name="trestbps" placeholder="trestbps" id="trestbps">
+        </div>
+          <div class="col-md-6">
+          <label for="chol" class="form-label">Cholesterol</label>
+          <input type="text" class="form-control" name="chol" placeholder="chol"  id="chol">
+        </div>
+        <div class="col-md-6">
+          <label for="fbs" class="form-label">Fasting Blood Sugar</label>
+          <input type="text" class="form-control" name="fbs" placeholder="fbs"  id="fbs">
+        </div>
+          <div class="col-md-6">
+          <label for="restecg" class="form-label">Resting Electrocardiogram Results</label>
+          <input type="text" class="form-control" name="restecg" placeholder="restecg"  id="restecg">
+        </div>
+        <div class="col-md-6">
+          <label for="thalach" class="form-label">Maximum hearth rate achieved</label>
+          <input type="text" class="form-control" name="thalach" placeholder="thalach"   id="thalach">
+        </div>
+          <div class="col-md-6">
+          <label for="exang" class="form-label">Exercise induce angina</label>
+          <input type="text" class="form-control" name="exang" placeholder="exang"  id="exang">
+        </div>
+        <div class="col-md-6">
+          <label for="oldpeak" class="form-label">Oldpeak</label>
+          <input type="text" class="form-control" name="oldpeak" placeholder="oldpeak" id="oldpeak">
+        </div>
+          <div class="col-md-6">
+          <label for="slope" class="form-label">Slope</label>
+          <input type="text" class="form-control" name="slope" placeholder="slope" id="slope">
+        </div>
+        <div class="col-md-6">
+          <label for="ca" class="form-label">Ca</label>
+          <input type="text" class="form-control"  name="ca" placeholder="ca"  id="ca">
+        </div>
+          <div class="col-md-6">
+          <label for="thal" class="form-label">Thal</label>
+          <input type="text" class="form-control" name="thal" placeholder="thal"  id="thal">
+        </div>
+        <div class="col-md-6 pt-4">
+          <button class="btn btn-success btn-block">
+            Start Health Care Check
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="col-1 ml-3 mt-5">
+    </div>
+
+    <!-- Diagnostic card -->
+
+    <div class="col-3 card bg-body-tertiary ml-3 mt-5">
+
+          <div class="pt-5 text-center">
+            <img src="../static/hospital-cross.png" width="100" height="100">
+            {% for Solution in Solutions %}
+            <p class="pt-5 pl-2 pr-2">{{Solution.2}}</p>
+            {% endfor %}
+          </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Logo -->
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-9">
+    </div>
+    <div class="col-2">
+      <p class="pt-3">Author : Manuel Portero</p>
+    </div>
+    <div class="col-1">
+      <img class="pl-4" src="../static/logo.png" width="40" height="50">
+    </div>
+  </div>
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
